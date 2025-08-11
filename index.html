@@ -52,13 +52,32 @@
       color: #555;
     }
     section {
-      padding: 20px;
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
       background: white;
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       color: #222;
+      position: relative;
+    }
+    section::before,
+    section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    section::before {
+      left: -60px;
+      background: linear-gradient(to right, #cce0ff, transparent);
+    }
+    section::after {
+      right: -60px;
+      background: linear-gradient(to left, #cce0ff, transparent);
     }
     h2 {
       color: #111;
@@ -135,13 +154,11 @@
     <p>Kolarstwo | Bikejoring | Plany treningowe | Opieka Trenerska | Psie Zaprzegi</p>
   </header>
 
-
-
-<section>
+  <section>
     <h2>Łapy na Waty - Treningi Kolarskie</h2>
     <p>Łapy na Waty to unikalne połączenie kolarstwa szosowego, MTB, kolarstwa przełajowego (CX), gravelowego oraz sportów zaprzęgowych, takich jak bikejoring i scootering. Specjalizuję się w tworzeniu indywidualnych planów treningowych dopasowanych do Twoich celów i możliwości, które pomagają zwiększyć wytrzymałość, moc i taktykę startową. Niezależnie czy chcesz poprawić swoje wyniki w kolarstwie szosowym, górskim, przełajowym, gravelowym czy rozwijać umiejętności w dyscyplinach zaprzęgowych – oferuję wsparcie, które pozwoli Ci osiągnąć lepszą formę i sukcesy na zawodach.</p>
     <img src="Zdjeciastrona/lapynawaty.png" alt="Łapy na Waty - Treningi Kolarskie Krzysztof Biegański" style="width:100%; height:auto;">
-    <h1>Łapy na Waty - Treningi Kolarskie Krzysztof Biegański</h1>
+  </section>
 
 <section>
     <h2>O mnie</h2>
