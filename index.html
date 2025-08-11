@@ -32,15 +32,16 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      color: #eee; /* zmiana na jasny tekst, żeby było czytelnie na gradientowym tle */
-      background: linear-gradient(135deg, #1e3c72, #2a5298, #7b8cbb);
+      color: #333;
+      background: linear-gradient(135deg, #ffffff, #e6f0ff, #cce0ff);
       min-height: 100vh;
     }
     header {
-      background: #222;
-      color: white;
+      background: #f5f7ff;
+      color: #222;
       padding: 20px;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header h1 {
       margin: 0;
@@ -48,26 +49,19 @@
     }
     header p {
       font-size: 16px;
-      color: #ccc;
+      color: #555;
     }
-
     section {
       padding: 20px;
       max-width: 1000px;
       margin: auto;
-      /* usunąłem background: white; aby było widać gradient */
-      background: transparent;
-    }
-    section img {
-      max-width: 100%;
+      background: white;
       border-radius: 10px;
-      margin: 15px 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: #222;
     }
     h2 {
-      color: #ddd; /* jaśniejszy kolor nagłówków dla lepszej widoczności */
-    }
-    ul {
-      padding-left: 20px;
+      color: #111;
     }
     .plany {
       display: flex;
@@ -75,14 +69,13 @@
       gap: 20px;
     }
     .plan {
-      background: transparent; /* usunięcie białego tła */
+      background: #f9fbff;
       padding: 20px;
       border-radius: 10px;
       flex: 1;
       min-width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3); /* delikatny cień dla czytelności */
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #eee;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #222;
     }
     .plan h3 {
       margin-top: 0;
@@ -90,19 +83,20 @@
     .plan-price {
       font-size: 24px;
       font-weight: bold;
-      color: #e63946;
+      color: #007bff;
     }
     .szkolenia {
-      color: #007bff;
+      color: #0056b3;
     }
     .szkolenie-price {
-      color: #007bff;
+      color: #0056b3;
     }
     footer {
-      background: #222;
-      color: white;
+      background: #f5f7ff;
+      color: #222;
       text-align: center;
       padding: 20px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     }
     .galeria {
       display: flex;
@@ -140,6 +134,7 @@
     <h1>Łapy na Waty - Treningi Kolarskie Krzysztof Biegański</h1>
     <p>Kolarstwo | Bikejoring | Plany treningowe | Opieka Trenerska | Psie Zaprzegi</p>
   </header>
+
 
 
 <section>
