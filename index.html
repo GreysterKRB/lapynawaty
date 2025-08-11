@@ -1,159 +1,59 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
   <title>Łapy na Waty – Treningi Kolarskie i Bikejoring</title>
-  <meta
-    name="description"
-    content="Indywidualne plany treningowe dla kolarzy i zawodników bikejoringu. Prowadzenie przez medalistę MP i ME – Krzysztof Biegański."
-  />
-  <meta
-    name="keywords"
-    content="treningi kolarskie, bikejoring, scootering, FTP, plan treningowy, regeneracja, Krzysztof Biegański"
-  />
-  <meta name="author" content="Krzysztof Biegański" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Łapy na Waty – Treningi Kolarskie" />
-  <meta
-    property="og:description"
-    content="Plany treningowe dla kolarzy i zawodników bikejoringu. Medalista MP i ME."
-  />
-  <meta property="og:url" content="https://lapynawaty-treningikolarskie.pl/" />
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:image"
-    content="https://lapynawaty-treningikolarskie.pl/Zdjeciastrona/lapynawaty.png"
-  />
+  <meta name="description" content="Indywidualne plany treningowe dla kolarzy i zawodników bikejoringu. Prowadzenie przez medalistę MP i ME – Krzysztof Biegański.">
+  <meta name="keywords" content="treningi kolarskie, bikejoring, scootering, FTP, plan treningowy, regeneracja, Krzysztof Biegański">
+  <meta name="author" content="Krzysztof Biegański">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags (dla social media) -->
+  <meta property="og:title" content="Łapy na Waty – Treningi Kolarskie">
+  <meta property="og:description" content="Plany treningowe dla kolarzy i zawodników bikejoringu. Medalista MP i ME.">
+  <meta property="og:url" content="https://lapynawaty-treningikolarskie.pl/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lapynawaty-treningikolarskie.pl/Zdjeciastrona/lapynawaty.png">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #ffffff, #e6f0ff, #cce0ff);
-      min-height: 100vh;
-    }
-    header {
-      background: #f5f7ff;
-      color: #222;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    header p {
-      font-size: 16px;
-      color: #555;
-    }
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      color: #222;
-      position: relative;
-    }
-    section::before,
-    section::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 60px;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-    section::before {
-      left: -60px;
-      background: linear-gradient(to right, #cce0ff, transparent);
-    }
-    section::after {
-      right: -60px;
-      background: linear-gradient(to left, #cce0ff, transparent);
-    }
-    h2 {
-      color: #111;
-    }
-    .plany {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .plan {
-      background: #f9fbff;
-      padding: 20px;
-      border-radius: 10px;
-      flex: 1;
-      min-width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      color: #222;
-    }
-    .plan h3 {
-      margin-top: 0;
-    }
-    .plan-price {
-      font-size: 24px;
-      font-weight: bold;
-      color: #007bff;
-    }
-    .szkolenia {
-      color: #0056b3;
-    }
-    .szkolenie-price {
-      color: #0056b3;
-    }
-    footer {
-      background: #f5f7ff;
-      color: #222;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    }
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-    .galeria img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-    @media (max-width: 768px) {
-      .plany {
-        flex-direction: column;
-      }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:#fafafa; color:#333; }
+    header { background:#222; color:white; padding:20px; text-align:center; }
+    header h1 { margin:0; font-size:28px; }
+    header p { font-size:16px; color:#ccc; }
+    section { padding:20px; max-width:1000px; margin:auto; }
+    section img { max-width:100%; border-radius:10px; margin:15px 0; }
+    h2 { color:#111; }
+    ul { padding-left:20px; }
+    .plany { display:flex; flex-wrap:wrap; gap:20px; }
+    .plan { background:white; padding:20px; border-radius:10px; flex:1; min-width:280px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+    .plan h3 { margin-top:0; }
+    .plan-price { font-size:24px; font-weight:bold; color:#e63946; }
+    .szkolenia { color: #007BFF; } /* niebieski dla szkoleń */
+    .szkolenie-price { color: #007BFF; } /* niebieski kolor dla cen szkoleń */
+    footer { background:#222; color:white; text-align:center; padding:20px; }
+    .galeria { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .galeria img { width:200px; height:150px; object-fit:cover; border-radius:8px; cursor:pointer; transition:0.3s; }
+    .galeria img:hover { transform:scale(1.05); }
+    @media(max-width:768px) {
+        .plany { flex-direction:column; }
     }
   </style>
-
   <script>
     function powieksz(src) {
       let okno = window.open("", "_blank");
-      okno.document.write("<img src='" + src + "' style='width:100%'>");
+      okno.document.write("<img src='"+src+"' style='width:100%'>");
     }
   </script>
 </head>
 <body>
-  <header>
+
+<header>
     <h1>Łapy na Waty - Treningi Kolarskie Krzysztof Biegański</h1>
     <p>Kolarstwo | Bikejoring | Plany treningowe | Opieka Trenerska | Psie Zaprzegi</p>
-  </header>
-
+</header>
   <section>
     <h2>Łapy na Waty - Treningi Kolarskie</h2>
     <p>Łapy na Waty to unikalne połączenie kolarstwa szosowego, MTB, kolarstwa przełajowego (CX), gravelowego oraz sportów zaprzęgowych, takich jak bikejoring i scootering. Specjalizuję się w tworzeniu indywidualnych planów treningowych dopasowanych do Twoich celów i możliwości, które pomagają zwiększyć wytrzymałość, moc i taktykę startową. Niezależnie czy chcesz poprawić swoje wyniki w kolarstwie szosowym, górskim, przełajowym, gravelowym czy rozwijać umiejętności w dyscyplinach zaprzęgowych – oferuję wsparcie, które pozwoli Ci osiągnąć lepszą formę i sukcesy na zawodach.</p>
