@@ -311,19 +311,24 @@ function toggleMenu() {
 <!-- Google Translate -->
 <div id="google_translate_element" style="display: none; position: fixed; top: 10px; left: 10px; z-index: 9999; background: #FFD140; border-radius: 8px; padding: 10px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; user-select: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px;"></div>
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'pl',
-    includedLanguages: 'en,de,fr,es,it,uk,cs,sk,ru',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pl',
+      includedLanguages: 'en,de,fr,es,it,uk,cs,sk,ru',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
 
-document.getElementById('toggleTranslate').addEventListener('click', () => {
-  const el = document.getElementById('google_translate_element');
-  el.style.display = (el.style.display === 'none' ? 'block' : 'none');
-});
+  document.getElementById('toggleTranslate').addEventListener('click', function() {
+    const el = document.getElementById('google_translate_element');
+    if (el.style.display === 'none') {
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  });
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
