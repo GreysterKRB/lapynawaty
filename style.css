@@ -286,3 +286,56 @@ html {
 .menu a.active {
   color: #ffd54f;
 }
+.menu {
+  background-color: #000000; /* czarne tło */
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  gap: 15px;
+  position: fixed; /* jeśli na mobilkach chcesz wyśrodkowanie */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* ukryte domyślnie na mobilkach */
+  flex-direction: column;
+  z-index: 10001;
+}
+
+.menu.show {
+  display: flex !important;
+}
+
+/* Linki białe */
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Po najechaniu lub focusie link zmienia kolor na żółty */
+.menu a:hover,
+.menu a:focus {
+  color: #ffd54f;
+}
+
+/* Na desktopie - menu poziome z czarnym tłem i białymi linkami */
+@media (min-width: 769px) {
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    background-color: #000000;
+    padding: 10px 20px;
+    position: static;
+    max-width: none;
+    max-height: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
