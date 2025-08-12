@@ -508,5 +508,50 @@ body {
     display: none;
   }
 }
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10001;
+    gap: 15px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 8px;
+  }
+
+  .menu.show {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 45px;
+    right: 10px;
+    z-index: 10002;
+    cursor: pointer;
+    font-size: 24px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: top 0.3s ease;
+  }
+
+  .menu-toggle.hide {
+    top: -60px;
+  }
+}
+
 
 
