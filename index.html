@@ -38,6 +38,9 @@
   </script>
 </head>
 <body>
+  <button id="toggleTranslate" style="position: fixed; top: 10px; left: 10px; z-index: 10000; padding: 10px 15px; font-size: 1rem; background: #ffd54f; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+  🌐 Wybierz język
+</button>
   <header>
     <h1>Łapy na Waty - Treningi Kolarskie Krzysztof Biegański</h1>
     <p>Kolarstwo | Bikejoring | Plany treningowe | Opieka Trenerska | Psie Zaprzegi</p>
@@ -305,8 +308,7 @@ function toggleMenu() {
 }
 </script>
 <!-- Google Translate -->
-<div id="google_translate_element" style="position: fixed; top: 10px; left: 10px; z-index: 9999; background: #FFD140; border-radius: 8px; padding: 10px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; user-select: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px;"></div>
-
+<div id="google_translate_element" style="display: none; position: fixed; top: 10px; left: 10px; z-index: 9999; background: #FFD140; border-radius: 8px; padding: 10px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; user-select: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
@@ -315,6 +317,11 @@ function googleTranslateElementInit() {
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
+
+document.getElementById('toggleTranslate').addEventListener('click', () => {
+  const el = document.getElementById('google_translate_element');
+  el.style.display = (el.style.display === 'none' ? 'block' : 'none');
+});
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
