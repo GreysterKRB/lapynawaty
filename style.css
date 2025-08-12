@@ -363,4 +363,61 @@ body {
 .menu a:hover {
   color: #ffd54f;
 }
+/* Menu poziome i widoczne na duże ekrany */
+.navbar .menu {
+  display: flex !important;
+  flex-direction: row;
+  gap: 20px;
+  position: static;
+  width: auto;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  z-index: 10;
+}
+
+/* Hamburger - domyślnie ukryty na desktop */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  font-size: 28px;
+  color: #222;
+  cursor: pointer;
+  z-index: 9998; /* pod Google Translate */
+  background: #ffd54f;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: top 0.3s ease;
+}
+
+/* Na mobilkach - menu schowane, hamburger widoczny */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    width: 220px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
+  .navbar .menu.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    z-index: 9999; /* nad menu na mobilkach */
+  }
+  .menu-toggle.hide {
+    top: -60px !important;
+  }
+}
 
