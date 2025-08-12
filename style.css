@@ -552,6 +552,59 @@ body {
     top: -60px;
   }
 }
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;       /* środek pionowy ekranu */
+    left: 50%;      /* środek poziomy ekranu */
+    transform: translate(-50%, -50%); /* idealne wyśrodkowanie */
+    background: white;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10001;
+    gap: 15px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 8px;
+  }
+
+  .menu.show {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 50px;   /* dostosuj, by był pod Google Translate */
+    right: 10px;
+    z-index: 10002;
+    cursor: pointer;
+    font-size: 28px;
+    background: #f8f8f8; /* lekko szare tło, żeby było widoczne */
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #333; /* ciemny kolor tekstu */
+    user-select: none;
+    transition: top 0.3s ease;
+  }
+
+  .menu-toggle.hide {
+    top: -60px;
+  }
+}
+
+/* Na desktopie hamburger ukryty */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
 
 
 
