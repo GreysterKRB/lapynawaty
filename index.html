@@ -41,17 +41,17 @@
   <header>
     <h1>Łapy na Waty - Treningi Kolarskie Krzysztof Biegański</h1>
     <p>Kolarstwo | Bikejoring | Plany treningowe | Opieka Trenerska | Psie Zaprzegi</p>
-
-    <nav>
-      <ul style="list-style:none; display:flex; gap:20px; padding:0; justify-content:center; margin-top:10px;">
-        <li><a href="#omnie">O mnie</a></li>
-        <li><a href="#kwalifikacje">Kwalifikacje</a></li>
-        <li><a href="#osiagniecia">Osiągnięcia</a></li>
-        <li><a href="#plany">Plany treningowe</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
+  <nav class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="menu">
+      <li><a href="#omnie">O mnie</a></li>
+      <li><a href="#kwalifikacje">Kwalifikacje</a></li>
+      <li><a href="#osiagniecia">Osiągnięcia</a></li>
+      <li><a href="#plany">Plany treningowe</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
   </header>
 
   <section>
@@ -299,6 +299,10 @@
     <p>Kontakt: krzysiekbieganskki@gmail.com | Tel. 795-000-046</p>
     <p>© 2025 Łapy na Waty - Wszystkie prawa zastrzeżone</p>
 </footer>
-
+<script>
+function toggleMenu() {
+  document.querySelector(".menu").classList.toggle("show");
+}
+</script>
 </body>
 </html>
