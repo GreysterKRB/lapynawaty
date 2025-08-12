@@ -16,6 +16,20 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #FFD140;
+    }
+  </style>
+
   <script>
     function powieksz(src) {
       let okno = window.open("", "_blank");
@@ -27,14 +41,26 @@
   <header>
     <h1>Łapy na Waty - Treningi Kolarskie Krzysztof Biegański</h1>
     <p>Kolarstwo | Bikejoring | Plany treningowe | Opieka Trenerska | Psie Zaprzegi</p>
+
+    <nav>
+      <ul style="list-style:none; display:flex; gap:20px; padding:0; justify-content:center; margin-top:10px;">
+        <li><a href="#omnie">O mnie</a></li>
+        <li><a href="#kwalifikacje">Kwalifikacje</a></li>
+        <li><a href="#osiagniecia">Osiągnięcia</a></li>
+        <li><a href="#plany">Plany treningowe</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
   </header>
+
   <section>
     <h2>Łapy na Waty - Treningi Kolarskie</h2>
     <p>Łapy na Waty to unikalne połączenie kolarstwa szosowego, MTB, kolarstwa przełajowego (CX), gravelowego oraz sportów zaprzęgowych, takich jak bikejoring i scootering. Specjalizuję się w tworzeniu indywidualnych planów treningowych dopasowanych do Twoich celów i możliwości, które pomagają zwiększyć wytrzymałość, moc i taktykę startową. Niezależnie czy chcesz poprawić swoje wyniki w kolarstwie szosowym, górskim, przełajowym, gravelowym czy rozwijać umiejętności w dyscyplinach zaprzęgowych – oferuję wsparcie, które pozwoli Ci osiągnąć lepszą formę i sukcesy na zawodach.</p>
     <img src="Zdjeciastrona/lapynawaty.png" alt="Łapy na Waty - Treningi Kolarskie Krzysztof Biegański" style="width:100%; height:auto;">
   </section>
 
-<section>
+<section id="omnie">
     <h2>O mnie</h2>
     <p>Nazywam się Krzysztof Biegański – certyfikowany instruktor kolarstwa, wielokrotny medalista Mistrzostw Polski, zdobywca Pucharu Polski oraz Wicemistrz Europy w bikejoringu. Znam sposoby, jak połączyć sport z codziennym życiem i maksymalnie wykorzystać dostępny czas na trening.</p>
     <ul>
@@ -54,7 +80,7 @@
     <img src="Zdjeciastrona/omnie.jpg" alt="O mnie - Krzysztof Biegański" style="width:100%;max-width:800px;">
 </section>
 
-<section>
+<section id="kwalifikacje">
     <h2>Kwalifikacje</h2>
     <ul>
         <li>Certyfikowany Instruktor Kolarstwa</li>
@@ -65,7 +91,7 @@
     </ul>
 </section>
 
-<section>
+<section id="osiagniecia">
 <h2>Osiągnięcia</h2>
 <ul>
 <li>🏅 Wicemistrzostwo Europy w Bikejoringu 2024</li>
@@ -257,7 +283,7 @@
     <img src="Zdjeciastrona/Treningikolarskie.jpg" alt="treningi kolarskie opieka trenerska" style="width:100%;max-width:800px;">
 </section>
 
-<section>
+<section id="galeria">
     <h2>Galeria</h2>
 <div class="galeria">
     <img src="Zdjeciastrona/zdjecie1.jpg" onclick="powieksz(this.src)" alt="Zdjęcie 1">
@@ -269,8 +295,7 @@
 </div>
 </section>
 
-
-<footer>
+<footer id="kontakt">
     <p>Kontakt: krzysiekbieganskki@gmail.com | Tel. 795-000-046</p>
     <p>© 2025 Łapy na Waty - Wszystkie prawa zastrzeżone</p>
 </footer>
