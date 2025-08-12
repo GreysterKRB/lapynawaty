@@ -252,3 +252,37 @@ html {
     z-index: 10;
   }
 }
+.menu {
+  /* ... reszta stylów bez zmian ... */
+  background: white;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 10001;
+  gap: 15px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+/* Linki na mobilkach - czarne, widoczne na białym tle */
+.menu a {
+  color: #222;  /* ciemny tekst */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover i focus - podświetlenie żółte */
+.menu a:hover,
+.menu a:focus {
+  color: #ffd54f;  /* żółty */
+}
+
+/* Aktywny link (jeśli chcesz zmieniać kolor po kliknięciu) */
+.menu a.active {
+  color: #ffd54f;
+}
