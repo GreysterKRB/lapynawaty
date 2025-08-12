@@ -298,4 +298,69 @@ body {
 .navbar .menu a:hover {
   color: #ffd54f;
 }
+/* Google Translate */
+#google_translate_element {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd54f;
+  padding: 8px 12px;
+  border-radius: 0 0 10px 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 9999;
+  user-select: none;
+}
+
+/* Hamburger */
+.menu-toggle {
+  position: fixed;
+  top: 50px; /* pod Google Translate */
+  right: 10px;
+  font-size: 28px;
+  color: #222;
+  cursor: pointer;
+  z-index: 10000;
+  background: #ffd54f;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: top 0.3s ease;
+}
+
+.menu-toggle.hide {
+  top: -60px !important; /* chowamy poza ekran */
+}
+
+/* Menu */
+.menu {
+  display: none;
+  flex-direction: column;
+  background: #222;
+  position: fixed;
+  top: 90px; /* pod hamburgerem */
+  right: 10px;
+  width: 220px;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
+.menu.show {
+  display: flex;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 0;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #ffd54f;
+}
 
