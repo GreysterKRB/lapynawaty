@@ -144,41 +144,6 @@ html {
   padding: 10px;
   position: relative;
 }
-
-.navbar .menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-}
-
-.navbar .menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-.navbar .menu a:hover {
-  color: #FFD140;
-}
-/* Google Translate - u góry po lewej */
-#google_translate_element {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 10002; /* wyżej niż hamburger */
-  background-color: #ffd54f;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  cursor: pointer;
-  user-select: none;
-}
-
 /* Hamburger - ciemne tło, biały kolor, po prawej u góry */
 .menu-toggle {
   display: none; /* domyślnie ukryty na desktopie */
@@ -202,140 +167,87 @@ html {
   top: -60px !important;
 }
 
-/* Menu na mobilkach - wyśrodkowane */
+/* Menu na mobilkach - wyśrodkowane, czarne tło, białe linki */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block; /* hamburger widoczny na mobilkach */
   }
 
   .menu {
-    display: none;
+    display: none; /* domyślnie ukryte */
     flex-direction: column;
     position: fixed;
-    top: 50%;       /* pionowo środek */
-    left: 50%;      /* poziomo środek */
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background-color: #000000; /* czarne tło */
     padding: 20px 30px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     z-index: 10001;
     gap: 15px;
     max-width: 90vw;
     max-height: 80vh;
     overflow-y: auto;
-    border-radius: 8px;
   }
 
   .menu.show {
     display: flex !important;
   }
-}
 
-/* Hamburger ukryty na desktopie */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none;
+  /* Linki na mobilkach - białe */
+  .menu a {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
   }
 
-  /* Menu poziome i widoczne na desktopie */
+  .menu a:hover,
+  .menu a:focus {
+    color: #ffd54f; /* żółte podświetlenie */
+  }
+}
+
+/* Menu i linki na desktopie */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* hamburger ukryty na desktopie */
+  }
+
   .menu {
     display: flex !important;
     flex-direction: row;
     gap: 20px;
     position: static;
     width: auto;
-    background: transparent;
-    padding: 0;
+    background-color: #000000; /* czarne tło */
+    padding: 10px 20px;
     box-shadow: none;
     border-radius: 0;
-    z-index: 10;
-  }
-}
-.menu {
-  /* ... reszta stylów bez zmian ... */
-  background: white;
-  padding: 20px 30px;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  z-index: 10001;
-  gap: 15px;
-  max-width: 90vw;
-  max-height: 80vh;
-  overflow-y: auto;
-  border-radius: 8px;
-}
-
-/* Linki na mobilkach - czarne, widoczne na białym tle */
-.menu a {
-  color: #222;  /* ciemny tekst */
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover i focus - podświetlenie żółte */
-.menu a:hover,
-.menu a:focus {
-  color: #ffd54f;  /* żółty */
-}
-
-/* Aktywny link (jeśli chcesz zmieniać kolor po kliknięciu) */
-.menu a.active {
-  color: #ffd54f;
-}
-.menu {
-  background-color: #000000; /* czarne tło */
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  max-width: 90vw;
-  max-height: 80vh;
-  overflow-y: auto;
-  gap: 15px;
-  position: fixed; /* jeśli na mobilkach chcesz wyśrodkowanie */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none; /* ukryte domyślnie na mobilkach */
-  flex-direction: column;
-  z-index: 10001;
-}
-
-.menu.show {
-  display: flex !important;
-}
-
-/* Linki białe */
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-/* Po najechaniu lub focusie link zmienia kolor na żółty */
-.menu a:hover,
-.menu a:focus {
-  color: #ffd54f;
-}
-
-/* Na desktopie - menu poziome z czarnym tłem i białymi linkami */
-@media (min-width: 769px) {
-  .menu {
-    display: flex !important;
-    flex-direction: row;
-    background-color: #000000;
-    padding: 10px 20px;
-    position: static;
     max-width: none;
     max-height: none;
-    box-shadow: none;
-    border-radius: 0;
+    overflow: visible;
+    z-index: 10;
+  }
+
+  /* Linki na desktopie - białe */
+  .menu a {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .menu a:hover,
+  .menu a:focus {
+    color: #ffd54f; /* żółte podświetlenie */
   }
 }
+
+
 
