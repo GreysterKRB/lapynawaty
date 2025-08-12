@@ -311,7 +311,7 @@ function toggleMenu() {
 new google.translate.TranslateElement({
   pageLanguage: 'pl',
   includedLanguages: 'en,de,fr,es,it,uk,cs,sk,ru',
-  layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+  layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, // albo TOP_RIGHT
   autoDisplay: true
 }, 'google_translate_element');
   }
