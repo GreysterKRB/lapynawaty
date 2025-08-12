@@ -381,13 +381,10 @@ function toggleMenu() {
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 
-    // Przy zmianie rozmiaru okna lub załadowaniu strony
+    // Obsługa zmiany rozmiaru okna - NIE ustawiamy menu.style.display, steruje CSS
     function handleResize() {
       if (window.innerWidth > 768 && !isMobile) {
         menu.classList.remove('show');
-        menu.style.display = 'flex';  // pokaz menu poziomo na desktopie
-      } else {
-        menu.style.display = ''; // mobilki - menu ukryte do toggle'a
       }
     }
     window.addEventListener('resize', handleResize);
