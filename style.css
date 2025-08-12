@@ -214,3 +214,16 @@ body {
   right: 10px;
   z-index: 10000;
 }
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+  background-color: #222;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+}
