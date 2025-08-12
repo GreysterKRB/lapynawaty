@@ -365,5 +365,21 @@ function toggleMenu() {
     });
   });
 </script>
+ let lastScrollTop = 0;
+const menuToggle = document.querySelector('.menu-toggle');
+
+window.addEventListener('scroll', () => {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (currentScroll > lastScrollTop) {
+    // przewijasz w dół — chowaj hamburger
+    menuToggle.classList.add('hide');
+  } else {
+    // przewijasz w górę — pokazuj hamburger
+    menuToggle.classList.remove('hide');
+  }
+  
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // dla iOS
+});
 </body>
 </html>
