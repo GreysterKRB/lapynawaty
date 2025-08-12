@@ -419,5 +419,44 @@ body {
   .menu-toggle.hide {
     top: -60px !important;
   }
+  /* Ukryj menu na mobilkach do momentu kliknięcia hamburgera */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none !important;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    gap: 10px;
+    z-index: 9999;
+  }
+  .navbar .menu.show {
+    display: flex !important;
+  }
 }
+
+/* Styl hamburgera */
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  color: white;
+  background: #222;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10001; /* wyżej niż menu */
+  transition: top 0.3s ease;
+}
+
+/* Klasa do ukrywania hamburgera */
+.menu-toggle.hide {
+  top: -60px !important;
+}
+}
+
 
