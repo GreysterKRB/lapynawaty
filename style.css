@@ -208,3 +208,9 @@ html {
 body {
   padding-top: 50px; /* aby nie schował się pod pasek */
 }
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+}
