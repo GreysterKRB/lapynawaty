@@ -163,93 +163,7 @@ html {
 .navbar .menu a:hover {
   color: #FFD140;
 }
-
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .navbar .menu {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    gap: 10px;
-  }
-  .navbar .menu.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
-#google_translate_element {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffd54f; /* jasne żółte */
-  padding: 8px 12px;
-  border-radius: 0 0 10px 10px;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  z-index: 9999;
-  cursor: pointer;
-  user-select: none;
-}
-body {
-  padding-top: 50px; /* aby nie schował się pod pasek */
-}
-.menu-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 10000;
-}
-.menu-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 10000;
-  background-color: rgba(34,34,34,0.8);
-  color: white;
-  padding: 8px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: top 0.3s ease;
-}
-.menu-toggle.hide {
-  top: -60px; /* przesuwa hamburger poza ekran w górę */
-}
-/* Hamburger (menu-toggle) - prawa strona */
-.menu-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 10001;
-  background-color: rgba(34,34,34,0.85);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 24px;
-  user-select: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: top 0.3s ease;
-}
-
-/* Google Translate po lewej stronie */
+/* Google Translate - u góry po lewej */
 #google_translate_element {
   position: fixed;
   top: 10px;
@@ -265,256 +179,41 @@ body {
   user-select: none;
 }
 
-/* Menu na cały ekran pod hamburgerem */
-.navbar .menu {
-  display: none;
+/* Hamburger - ciemne tło, biały kolor, po prawej u góry */
+.menu-toggle {
+  display: none; /* domyślnie ukryty na desktopie */
   position: fixed;
-  top: 50px; /* poniżej hamburgera */
+  top: 50px;  /* pod Google Translate */
   right: 10px;
-  background-color: #222;
-  border-radius: 8px;
-  padding: 15px 20px;
-  flex-direction: column;
-  gap: 15px;
-  max-height: 80vh;
-  overflow-y: auto;
-  z-index: 10000;
-  width: 220px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.navbar .menu.show {
-  display: flex;
-}
-
-/* Linki w menu */
-.navbar .menu a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.navbar .menu a:hover {
-  color: #ffd54f;
-}
-/* Google Translate */
-#google_translate_element {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffd54f;
+  z-index: 10002;
+  cursor: pointer;
+  font-size: 28px;
+  background: #222;  /* ciemne tło */
+  color: white;      /* biała ikonka */
   padding: 8px 12px;
-  border-radius: 0 0 10px 10px;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  z-index: 9999;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   user-select: none;
-}
-
-/* Hamburger */
-.menu-toggle {
-  position: fixed;
-  top: 50px; /* pod Google Translate */
-  right: 10px;
-  font-size: 28px;
-  color: #222;
-  cursor: pointer;
-  z-index: 10000;
-  background: #ffd54f;
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: top 0.3s ease;
 }
 
-.menu-toggle.hide {
-  top: -60px !important; /* chowamy poza ekran */
-}
-
-/* Menu */
-.menu {
-  display: none;
-  flex-direction: column;
-  background: #222;
-  position: fixed;
-  top: 90px; /* pod hamburgerem */
-  right: 10px;
-  width: 220px;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
-}
-
-.menu.show {
-  display: flex;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 0;
-  font-weight: bold;
-}
-
-.menu a:hover {
-  color: #ffd54f;
-}
-/* Menu poziome i widoczne na duże ekrany */
-.navbar .menu {
-  display: flex !important;
-  flex-direction: row;
-  gap: 20px;
-  position: static;
-  width: auto;
-  background: transparent;
-  padding: 0;
-  box-shadow: none;
-  border-radius: 0;
-  z-index: 10;
-}
-
-/* Hamburger - domyślnie ukryty na desktop */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 50px;
-  right: 10px;
-  font-size: 28px;
-  color: #222;
-  cursor: pointer;
-  z-index: 9998; /* pod Google Translate */
-  background: #ffd54f;
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: top 0.3s ease;
-}
-
-/* Na mobilkach - menu schowane, hamburger widoczny */
-@media (max-width: 768px) {
-  .navbar .menu {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: fixed;
-    top: 90px;
-    right: 10px;
-    width: 220px;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 9999;
-  }
-  .navbar .menu.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-    z-index: 9999; /* nad menu na mobilkach */
-  }
-  .menu-toggle.hide {
-    top: -60px !important;
-  }
-  /* Ukryj menu na mobilkach do momentu kliknięcia hamburgera */
-@media (max-width: 768px) {
-  .navbar .menu {
-    display: none !important;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    gap: 10px;
-    z-index: 9999;
-  }
-  .navbar .menu.show {
-    display: flex !important;
-  }
-}
-
-/* Styl hamburgera */
-.menu-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  font-size: 28px;
-  color: white;
-  background: #222;
-  padding: 5px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 10001; /* wyżej niż menu */
-  transition: top 0.3s ease;
-}
-
-/* Klasa do ukrywania hamburgera */
+/* Ukrywanie hamburgera */
 .menu-toggle.hide {
   top: -60px !important;
 }
-}
-.menu {
-  display: flex; /* desktop - menu zawsze widoczne */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
-}
 
+/* Menu na mobilkach - wyśrodkowane */
 @media (max-width: 768px) {
-  .menu {
-    display: none; /* na mobile domyślnie ukryte */
-    flex-direction: column;
-    position: fixed;
-    top: 50px; /* pod google translate */
-    right: 10px;
-    background: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    z-index: 9999;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  .menu.show {
-    display: flex !important; /* pokazuj menu po kliknięciu hamburgera */
-  }
   .menu-toggle {
-    display: block;
-    position: fixed;
-    top: 45px;  /* ustaw hamburger pod Google Translate (który jest ~10px od góry) */
-    right: 10px;
-    z-index: 10000;
-    cursor: pointer;
-    font-size: 24px;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: top 0.3s ease;
+    display: block; /* hamburger widoczny na mobilkach */
   }
-  .menu-toggle.hide {
-    top: -60px; /* chowaj hamburger przy scrollowaniu w dół */
-  }
-}
 
-/* Na desktopie hamburger ukryty */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
   .menu {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 50%;       /* pionowo środek */
+    left: 50%;      /* poziomo środek */
     transform: translate(-50%, -50%);
     background: white;
     padding: 20px 30px;
@@ -531,80 +230,25 @@ body {
   .menu.show {
     display: flex !important;
   }
-
-  .menu-toggle {
-    display: block;
-    position: fixed;
-    top: 45px;
-    right: 10px;
-    z-index: 10002;
-    cursor: pointer;
-    font-size: 24px;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: top 0.3s ease;
-  }
-
-  .menu-toggle.hide {
-    top: -60px;
-  }
-}
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 50%;       /* środek pionowy ekranu */
-    left: 50%;      /* środek poziomy ekranu */
-    transform: translate(-50%, -50%); /* idealne wyśrodkowanie */
-    background: white;
-    padding: 20px 30px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    z-index: 10001;
-    gap: 15px;
-    max-width: 90vw;
-    max-height: 80vh;
-    overflow-y: auto;
-    border-radius: 8px;
-  }
-
-  .menu.show {
-    display: flex !important;
-  }
-
-  .menu-toggle {
-    display: block;
-    position: fixed;
-    top: 50px;   /* dostosuj, by był pod Google Translate */
-    right: 10px;
-    z-index: 10002;
-    cursor: pointer;
-    font-size: 28px;
-    background: #f8f8f8; /* lekko szare tło, żeby było widoczne */
-    border: 1px solid #ccc;
-    padding: 6px 12px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    color: #333; /* ciemny kolor tekstu */
-    user-select: none;
-    transition: top 0.3s ease;
-  }
-
-  .menu-toggle.hide {
-    top: -60px;
-  }
 }
 
-/* Na desktopie hamburger ukryty */
+/* Hamburger ukryty na desktopie */
 @media (min-width: 769px) {
   .menu-toggle {
     display: none;
   }
+
+  /* Menu poziome i widoczne na desktopie */
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    position: static;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: 10;
+  }
 }
-
-
-
