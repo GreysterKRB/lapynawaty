@@ -190,3 +190,14 @@ html {
     display: block;
   }
 }
+#google_translate_element {
+  background-color: #ffd54f;  /* jasne żółte tło */
+  border: 2px solid #ffa000;  /* pomarańczowa ramka */
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: max-content;
+  margin: 20px auto;  /* wyśrodkowanie */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
