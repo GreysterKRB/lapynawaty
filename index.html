@@ -339,37 +339,41 @@ function toggleMenu() {
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
-  // Pobierz elementy menu i hamburgera
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'pl'}, 'google_translate_element');
+  }
 
-  // Obsługa kliknięcia hamburgera - pokaz/ukryj menu
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
 
-  // Po kliknięciu w link menu - schowaj menu
-  document.querySelectorAll('.menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('show');
+    // Kliknięcie hamburgera - toggle menu
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
     });
-  });
 
-  // Ukrywanie/pokazywanie hamburgera przy scrollu
-  let lastScrollTop = 0;
+    // Kliknięcie linku w menu - zamknij menu
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+      });
+    });
 
-  window.addEventListener('scroll', () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    // Pokazywanie/ukrywanie hamburgera przy scrollowaniu
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
-      // przewijasz w dół — chowaj hamburger
-      menuToggle.style.top = '-60px'; // schowaj poza ekran
-    } else {
-      // przewijasz w górę — pokaż hamburger
-      menuToggle.style.top = '10px'; // pokaż hamburger
-    }
+      if (currentScroll > lastScrollTop) {
+        // Scroll w dół - chowaj hamburger
+        menuToggle.classList.add('hide');
+      } else {
+        // Scroll w górę - pokazuj hamburger
+        menuToggle.classList.remove('hide');
+      }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // zabezpieczenie na iOS
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
   });
 </script>
 </body>
