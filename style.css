@@ -192,17 +192,19 @@ html {
 }
 #google_translate_element {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 9999;
-  background-color: #ffd54f;  /* jasne żółte tło */
-  border: 2px solid #ffa000;  /* pomarańczowa ramka */
-  padding: 10px 15px;
-  border-radius: 8px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd54f; /* jasne żółte */
+  padding: 8px 12px;
+  border-radius: 0 0 10px 10px;
   font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 9999;
   cursor: pointer;
   user-select: none;
-  width: max-content;
+}
+body {
+  padding-top: 50px; /* aby nie schował się pod pasek */
 }
