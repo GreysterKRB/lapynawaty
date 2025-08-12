@@ -339,25 +339,23 @@ function toggleMenu() {
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
-  function toggleMenu() {
-    document.querySelector('.menu').classList.toggle('active');
-  }
-
-  // Obsługa menu hamburger
+  // Pobierz elementy menu i hamburgera
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
 
+  // Obsługa kliknięcia hamburgera - pokaz/ukryj menu
   menuToggle.addEventListener('click', () => {
     menu.classList.toggle('show');
   });
 
+  // Po kliknięciu w link menu - schowaj menu
   document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('show');
     });
   });
 
-  // Pokazywanie / chowanie hamburgera przy scrollowaniu
+  // Ukrywanie/pokazywanie hamburgera przy scrollu
   let lastScrollTop = 0;
 
   window.addEventListener('scroll', () => {
@@ -365,13 +363,13 @@ function toggleMenu() {
 
     if (currentScroll > lastScrollTop) {
       // przewijasz w dół — chowaj hamburger
-      menuToggle.classList.add('hide');
+      menuToggle.style.top = '-60px'; // schowaj poza ekran
     } else {
-      // przewijasz w górę — pokazuj hamburger
-      menuToggle.classList.remove('hide');
+      // przewijasz w górę — pokaż hamburger
+      menuToggle.style.top = '10px'; // pokaż hamburger
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // dla iOS
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // zabezpieczenie na iOS
   });
 </script>
 </body>
