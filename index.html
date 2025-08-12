@@ -337,21 +337,13 @@ function toggleMenu() {
   });
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
   function toggleMenu() {
     document.querySelector('.menu').classList.toggle('active');
   }
 
-  // Schowaj menu po kliknięciu linku
-  document.querySelectorAll('.menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelector('.menu').classList.remove('active');
-    });
-  });
-</script>
- <!-- inne elementy strony -->
-
-<script>
+  // Obsługa menu hamburger
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
 
@@ -364,22 +356,23 @@ function toggleMenu() {
       menu.classList.remove('show');
     });
   });
-</script>
- let lastScrollTop = 0;
-const menuToggle = document.querySelector('.menu-toggle');
 
-window.addEventListener('scroll', () => {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  
-  if (currentScroll > lastScrollTop) {
-    // przewijasz w dół — chowaj hamburger
-    menuToggle.classList.add('hide');
-  } else {
-    // przewijasz w górę — pokazuj hamburger
-    menuToggle.classList.remove('hide');
-  }
-  
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // dla iOS
-});
+  // Pokazywanie / chowanie hamburgera przy scrollowaniu
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // przewijasz w dół — chowaj hamburger
+      menuToggle.classList.add('hide');
+    } else {
+      // przewijasz w górę — pokazuj hamburger
+      menuToggle.classList.remove('hide');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // dla iOS
+  });
+</script>
 </body>
 </html>
