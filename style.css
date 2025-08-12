@@ -232,3 +232,70 @@ body {
 .menu-toggle.hide {
   top: -60px; /* przesuwa hamburger poza ekran w górę */
 }
+/* Hamburger (menu-toggle) - prawa strona */
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10001;
+  background-color: rgba(34,34,34,0.85);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: top 0.3s ease;
+}
+
+/* Google Translate po lewej stronie */
+#google_translate_element {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10002; /* wyżej niż hamburger */
+  background-color: #ffd54f;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Menu na cały ekran pod hamburgerem */
+.navbar .menu {
+  display: none;
+  position: fixed;
+  top: 50px; /* poniżej hamburgera */
+  right: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 15px 20px;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 10000;
+  width: 220px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.navbar .menu.show {
+  display: flex;
+}
+
+/* Linki w menu */
+.navbar .menu a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar .menu a:hover {
+  color: #ffd54f;
+}
+
