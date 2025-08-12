@@ -344,18 +344,25 @@ function toggleMenu() {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Wykrycie urządzenia mobilnego (Android, iOS itp)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
 
-    // Kliknięcie hamburgera - toggle menu
+    // Kliknięcie hamburgera - toggle menu (tylko na mobilkach i wąskich ekranach)
     menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
+      if (window.innerWidth <= 768 || isMobile) {
+        menu.classList.toggle('show');
+      }
     });
 
-    // Kliknięcie linku w menu - zamknij menu
+    // Kliknięcie linku w menu - zamknij menu (tylko na mobilkach/wąskich ekranach)
     document.querySelectorAll('.menu a').forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.remove('show');
+        if (window.innerWidth <= 768 || isMobile) {
+          menu.classList.remove('show');
+        }
       });
     });
 
@@ -371,9 +378,20 @@ function toggleMenu() {
         // Scroll w górę - pokazuj hamburger
         menuToggle.classList.remove('hide');
       }
-
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
+
+    // Przy zmianie rozmiaru okna lub załadowaniu strony
+    function handleResize() {
+      if (window.innerWidth > 768 && !isMobile) {
+        menu.classList.remove('show');
+        menu.style.display = 'flex';  // pokaz menu poziomo na desktopie
+      } else {
+        menu.style.display = ''; // mobilki - menu ukryte do toggle'a
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
   });
 </script>
 </body>
