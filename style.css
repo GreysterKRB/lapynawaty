@@ -458,5 +458,55 @@ body {
   top: -60px !important;
 }
 }
+.menu {
+  display: flex; /* desktop - menu zawsze widoczne */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* na mobile domyślnie ukryte */
+    flex-direction: column;
+    position: fixed;
+    top: 50px; /* pod google translate */
+    right: 10px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .menu.show {
+    display: flex !important; /* pokazuj menu po kliknięciu hamburgera */
+  }
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 45px;  /* ustaw hamburger pod Google Translate (który jest ~10px od góry) */
+    right: 10px;
+    z-index: 10000;
+    cursor: pointer;
+    font-size: 24px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: top 0.3s ease;
+  }
+  .menu-toggle.hide {
+    top: -60px; /* chowaj hamburger przy scrollowaniu w dół */
+  }
+}
+
+/* Na desktopie hamburger ukryty */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
 
 
